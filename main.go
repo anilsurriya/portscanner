@@ -7,16 +7,14 @@ import (
 )
 
 func main() {
-	fmt.Println("...")
 
 	sj := scanner.NewJob("tcp", "127.0.0.1", 18000, 20000, 3)
 
-	sj.Generate()
-	sj.StartWorkers()
+	out := sj.StartJob()
 
 	openCount := 0
 
-	for result := range sj.Results {
+	for _, result := range out {
 		fmt.Println(&result)
 		if result.Status == scanner.Open {
 			openCount++
