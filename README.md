@@ -1,4 +1,5 @@
 # portscanner
+
 ## usage
 import the package scanner from github.com/anilsurriya/portscanner/scanner
 
@@ -33,7 +34,11 @@ func main() {
 	fmt.Printf("Total open ports: %v", openCount)
 }
 ```
+
 ## working
 - A generator piplelined with concurrent worker goroutines is used.
 - The generator generates addresses to scan and one of the worker gorountine scans it concurrently.
 - The results are piped into an unbuffered channel.
+
+## To-Do
+[] UI
